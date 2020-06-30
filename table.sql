@@ -24,6 +24,7 @@ create table score (
     student_id varchar(255) not null,
     subject_id varchar(255) not null,
     score FLOAT(10) not null,
+    constraint fk_student_id foreign key(student_id) references student(id) on delete cascade,
     constraint fk_subject_id foreign key(subject_id) references subject(id) on delete cascade
 );
 INSERT INTO score VALUES (1, '1', '1001', 80);
